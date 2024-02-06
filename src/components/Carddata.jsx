@@ -21,13 +21,12 @@ class Carddata extends Component {
         .then((response) => response.json())
         .then((users) => this.setState({ monsters: users }));
     }
-
     render() {
         return (
             <Container maxWidth="lg" sx={{ marginTop: 2 }}>
                 <Grid container spacing={3}>
                     {this.state.monsters.map((monster, index) => (
-                        <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
+                        <Grid key={index} xs={12} sm={6} md={4} lg={3}>
                             <BasicCard monster={monster} />
                         </Grid>
                     ))}

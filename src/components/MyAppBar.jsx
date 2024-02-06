@@ -23,7 +23,7 @@ const MyAppBar = () => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" noWrap sx={{ flexGrow: 1 }}>
-            My App
+            My App - Cards
           </Typography>
           <Search />
           <div sx={{ marginLeft: 1, marginRight: 1 }}>

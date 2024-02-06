@@ -1,5 +1,4 @@
 import { AppBar, Toolbar, Typography, InputBase, Switch, alpha } from '@mui/material';
-
 import SearchIcon from '@mui/icons-material/Search';
 function Search() {
     return (
