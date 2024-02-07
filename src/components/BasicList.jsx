@@ -12,7 +12,8 @@ class BasicList extends Component {
   constructor() {
     super();
     this.state = {
-      monsters: []
+      monsters: [],
+      searchField: ''
     }
   }
 
@@ -25,19 +26,22 @@ class BasicList extends Component {
   }
 
   render() {
+    const filteredResponse = this.state.monsters.filter((monster) => {
+      return monster.name.toLocaleLowerCase().includes(this.state.searchField)
+    })
     return (
       <div>
+        {/* SearchBar */}
         <input type='search' placeholder='search' className='search-box'onChange={(event) => {
-          const userString = event.target.value.toLocaleLowerCase();
-          const filteredResponse = this.state.monsters.filter((monster) => {
-            return monster.name.toLocaleLowerCase().includes(userString)
-          }) 
+          const searchField = event.target.value.toLocaleLowerCase();
+          
           this.setState(() => {
-            return {monsters: filteredResponse}
+            return {searchField}
           })
         }}/>
 
-        {this.state.monsters.map((monster) => {
+        {/* Adding data to Lists */}
+        {filteredResponse.map((monster) => {
           return <div key={monster.id}>
             <Box sx={{ marginLeft: 10, marginTop: 5, width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
           <Divider />
