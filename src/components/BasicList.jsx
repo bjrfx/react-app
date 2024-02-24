@@ -37,7 +37,14 @@ class BasicList extends Component {
           
           this.setState(() => {
             return {searchField}
+          }, () => { //remove this functin - only for testing purpose
+            this.setState(prevState => {
+              const newObject = { id: 10, name: 'Kiran Bandarupalli', username: 'bjrfx' };
+              return { monsters: [...prevState.monsters, newObject] };
+            });
           })
+          
+          
         }}/>
 
         {/* Adding data to Lists */}
@@ -60,4 +67,16 @@ class BasicList extends Component {
   }
 }
 
-export default BasicList;
+function SearchBarTwo() {
+  return <div>
+    <input type='search' placeholder='search' className='search-box'onChange={(event) => {
+          const searchField = event.target.value.toLocaleLowerCase();
+          
+          this.setState(() => {
+            return {searchField}
+          })
+        }}/>
+  </div>
+}
+
+export {BasicList, SearchBarTwo};

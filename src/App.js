@@ -1,8 +1,9 @@
 import './App.css';
 import MyAppBar from './components/MyAppBar';
 import Carddata from './components/Carddata';
-import BasicList from './components/BasicList';
+import {BasicList} from './components/BasicList';
 import Subtitle from './components/Subtitle';
+import Geetha from './components/bagavadgeetha/Geetha';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <MyAppBar />
      <Carddata />
      <BasicList />
+     <Geetha />
     </div>
   );
 }
